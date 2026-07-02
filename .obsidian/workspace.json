@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Projects/项目索引.md",
+                "file": "02-Areas/安全学习/h4cker-安全资源大全.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "项目索引"
+              "title": "h4cker-安全资源大全"
             }
           }
         ]
@@ -185,7 +185,10 @@
   },
   "active": "1fcc71f06556d7cf",
   "lastOpenFiles": [
+    "02-Areas/短视频创作/Seedance-Prompt-合集.md.tmp.563.1127e4ebfc23",
+    "02-Areas/安全学习/GitHub Top 10 安全学习仓库.md",
     "00-知识库入口.md",
+    "01-Projects/项目索引.md",
     "欢迎.md",
     "CLAUDE.md",
     "AGENTS.md",
@@ -193,7 +196,6 @@
     "宋玉文的一个人公司/数字人项目",
     "宋玉文的一个人公司",
     "Templates/项目记录模板.md",
-    "01-Projects/项目索引.md",
     "未命名 4.canvas",
     "Daily",
     "04-Archive",
