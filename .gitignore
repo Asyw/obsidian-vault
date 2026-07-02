@@ -1,0 +1,8 @@
+.projectmem/events.jsonl
+.projectmem/watch.pid
+.projectmem/watch.log
+.venv-projectmem/
+.integrations/.npm-cache/
+.integrations/github/*/node_modules/
+.DS_Store
+.trash/
