@@ -2,7 +2,6 @@
 .projectmem/watch.pid
 .projectmem/watch.log
 .venv-projectmem/
-.integrations/.npm-cache/
-.integrations/github/*/node_modules/
+.integrations/
 .DS_Store
 .trash/
