@@ -1,0 +1,15 @@
+.projectmem/events.jsonl
+.projectmem/watch.pid
+.projectmem/watch.log
+.venv-projectmem/
+.integrations/.npm-cache/
+.integrations/github/*/node_modules/
+.DS_Store
+.trash/
+
+# 各机器独立管理 Obsidian 配置，不同步
+.obsidian/
+
+# 可执行脚本视平台而定
+Scripts/*
+!/Scripts/
