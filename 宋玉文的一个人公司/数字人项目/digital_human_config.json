@@ -1,0 +1,57 @@
+{
+  "provider": "volcengine",
+  "product": "digital-human-talking-video",
+  "project": "数字人项目",
+  "selected_mode": "talking_head",
+  "env_file": ".env.local",
+  "auth": {
+    "type": "volcengine-iam-ak-sk",
+    "access_key_id_env": "VOLCENGINE_ACCESS_KEY_ID",
+    "secret_access_key_env": "VOLCENGINE_SECRET_ACCESS_KEY",
+    "note": "The digital-human video API is under Volcengine visual/image-generation services and may require IAM AK/SK rather than the Ark API key."
+  },
+  "api": {
+    "endpoint_env": "DIGITAL_HUMAN_API_ENDPOINT",
+    "default_endpoint": "https://visual.volcengineapi.com",
+    "region_env": "DIGITAL_HUMAN_API_REGION",
+    "default_region": "cn-beijing",
+    "service_env": "DIGITAL_HUMAN_API_SERVICE",
+    "default_service": "cv",
+    "version_env": "DIGITAL_HUMAN_API_VERSION",
+    "default_version": "2024-06-06",
+    "submit_action": "RealmanAvatarCreationTaskSubmitTask",
+    "query_action": "RealmanAvatarCreationTaskGetResult"
+  },
+  "inputs": {
+    "req_key_env": "DIGITAL_HUMAN_REQ_KEY",
+    "default_req_key": "realman_avatar_creation_task",
+    "avatar_id_env": "DIGITAL_HUMAN_AVATAR_ID",
+    "voice_id_env": "ARK_TTS_VOICE_ID",
+    "tts_resource_id_env": "ARK_TTS_RESOURCE_ID",
+    "script_text": "runtime_input",
+    "audio_url_env": "DIGITAL_HUMAN_AUDIO_URL",
+    "audio_url": "required_runtime_input_or_DIGITAL_HUMAN_AUDIO_URL"
+  },
+  "output": {
+    "aspect_ratio_env": "DIGITAL_HUMAN_ASPECT_RATIO",
+    "default_aspect_ratio": "9:16",
+    "resolution_env": "DIGITAL_HUMAN_RESOLUTION",
+    "default_resolution": "1080x1920",
+    "format_env": "DIGITAL_HUMAN_VIDEO_FORMAT",
+    "codec_env": "DIGITAL_HUMAN_VIDEO_CODEC",
+    "background_env": "DIGITAL_HUMAN_BACKGROUND"
+  },
+  "pipeline": [
+    "Generate or provide narration text.",
+    "Use TTS voice settings to synthesize audio when the video API requires audio input.",
+    "Upload or provide the narration audio as a public HTTP(S) audio_url.",
+    "Submit the digital-human video task with avatar_id and 9:16 output settings.",
+    "Poll the task until a video_url/result_url is available.",
+    "Download the generated video into the project output folder."
+  ],
+  "docs": [
+    "https://www.volcengine.com/docs/85128/1773810",
+    "https://www.volcengine.com/docs/85128/1773809",
+    "https://www.volcengine.com/docs/85128/1613954"
+  ]
+}

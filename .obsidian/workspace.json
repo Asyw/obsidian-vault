@@ -11,10 +11,14 @@
             "id": "1fcc71f06556d7cf",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "02-Areas/短视频创作/StoryGen-分镜生成.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "StoryGen-分镜生成"
             }
           }
         ]
@@ -181,6 +185,18 @@
   },
   "active": "1fcc71f06556d7cf",
   "lastOpenFiles": [
+    "02-Areas/短视频创作/GitHub Top 20 短视频创作项目.md",
+    "00-知识库入口.md",
+    "02-Areas/短视频创作/Open-Generative-AI.md",
+    "02-Areas/短视频创作/ViralCutter-爆款剪辑.md",
+    "02-Areas/短视频创作/youtube-short-automation.md",
+    "02-Areas/短视频创作/printfilm-短剧平台.md",
+    "02-Areas/短视频创作/Toonflow-短剧创作.md",
+    "02-Areas/短视频创作/Duix-Avatar-数字人.md",
+    "01-Projects/Obsidian AI 记忆库.md",
+    "01-Projects/Codex/Codex 插件中文化项目.md",
+    "01-Projects/Codex/Codex ni 项目.md",
+    "01-Projects/面粉厂小程序.md",
     "00-知识库入口.md.tmp.563.4a9db2a67360",
     "02-Areas/一人公司/Indie-Dev-Toolkit.md",
     "02-Areas/一人公司/Indie-Dev-Toolkit.md.tmp.563.187a27d06c3f",
@@ -201,22 +217,10 @@
     "02-Areas/一人公司/SaaS-Boilerplate.md",
     "02-Areas/一人公司/SaaS-Boilerplate.md.tmp.563.643b5930cb9b",
     "02-Areas/一人公司/一人公司纪实-Fangx.md",
-    "02-Areas/一人公司/一人公司纪实-Fangx.md.tmp.563.e14a484b8da1",
     "02-Areas/一人公司/一人独角兽-easychen.md",
     "02-Areas/一人公司/一人公司精选清单.md",
     "02-Areas/一人公司/独立开发者出海指南.md",
     "02-Areas/一人公司/一人公司方法论-easychen.md",
-    "02-Areas/一人公司/GitHub Top 30 一人公司项目.md",
-    "00-知识库入口.md",
-    "02-Areas/安全学习/90DaysOfCyberSecurity-90天计划.md",
-    "02-Areas/安全学习/GitHub Top 10 安全学习仓库.md",
-    "02-Areas/安全学习/h4cker-安全资源大全.md",
-    "01-Projects/项目索引.md",
-    "欢迎.md",
-    "CLAUDE.md",
-    "AGENTS.md",
-    "Agent-Configs/MCP 配置总览.md",
-    "Templates/项目记录模板.md",
     "未命名 4.canvas",
     "未命名.canvas",
     "未命名 3.canvas",

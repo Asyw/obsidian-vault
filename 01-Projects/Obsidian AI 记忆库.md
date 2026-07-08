@@ -33,3 +33,5 @@ tags:
 - 已安装 MCPVault 与 projectmem，并完成本地 MCP smoke test。
 - 已将同一套 `obsidian` 与 `projectmem` MCP server 接入 OpenClaw，并通过 `openclaw mcp probe` 验证。
 - 2026-07-03 已从 Mac mini 的 `/Users/xiaosong/Documents/Obsidian Vault` 同步到 Windows 的 `C:\Users\NINGMEI\Documents\Obsidian`，并安装 Windows 专用 projectmem 虚拟环境。
+- 2026-07-06 将 projectmem 记录的面粉厂小程序修复进展（9 个 fixed issue、退款/客服/管理员决策、待办与注意事项）同步到 [[面粉厂小程序]] 笔记，并更新项目索引记忆状态。
+- 2026-07-06 通过 SSH 从 Mac mini（192.168.1.223）拉取 Mac 独有内容：数字人项目、短视频制作、微信公众号自动化项目（文档+脚本，排除视频/图片/密钥），合并项目索引，新增数字人项目和短视频制作两个条目。

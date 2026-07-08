@@ -1,0 +1,93 @@
+{
+  "provider": "volcengine",
+  "project": "数字人项目",
+  "purpose": "short-video-generation",
+  "env_file": ".env.local",
+  "selected_mode_env": "SHORT_VIDEO_MODE",
+  "modes": {
+    "hybrid": {
+      "description": "复刻声音配音 + 方舟图片/视频生成 + 字幕/封面/剪辑合成",
+      "requires_digital_human_avatar": false
+    },
+    "talking_head": {
+      "description": "数字人形象出镜口播",
+      "requires_digital_human_avatar": true
+    },
+    "visual_story": {
+      "description": "无真人出镜的剧情/知识/历史类短视频，使用生成画面和旁白",
+      "requires_digital_human_avatar": false
+    },
+    "image_to_video": {
+      "description": "使用已有图片或生成图片作为镜头素材，再生成动态视频",
+      "requires_digital_human_avatar": false
+    }
+  },
+  "env": {
+    "ark_api_key": "ARK_API_KEY",
+    "ark_base_url": "ARK_BASE_URL",
+    "video_model": "ARK_VIDEO_MODEL",
+    "image_model": "ARK_IMAGE_MODEL",
+    "tts_voice_id": "ARK_TTS_VOICE_ID",
+    "tts_resource_id": "ARK_TTS_RESOURCE_ID",
+    "aspect_ratio": "SHORT_VIDEO_ASPECT_RATIO",
+    "resolution": "SHORT_VIDEO_RESOLUTION",
+    "duration_seconds": "SHORT_VIDEO_DURATION_SECONDS",
+    "fps": "SHORT_VIDEO_FPS",
+    "output_format": "SHORT_VIDEO_OUTPUT_FORMAT",
+    "output_dir": "SHORT_VIDEO_OUTPUT_DIR",
+    "subtitle_enabled": "SHORT_VIDEO_SUBTITLE_ENABLED",
+    "cover_enabled": "SHORT_VIDEO_COVER_ENABLED",
+    "digital_human_avatar_id": "DIGITAL_HUMAN_AVATAR_ID"
+  },
+  "defaults": {
+    "mode": "hybrid",
+    "aspect_ratio": "9:16",
+    "resolution": "1080x1920",
+    "duration_seconds": 30,
+    "fps": 24,
+    "output_format": "mp4",
+    "video_model": "doubao-seedance-1.5-pro",
+    "image_model": "doubao-seedream-5.0-lite"
+  },
+  "supported_aspect_ratios": {
+    "9:16": {
+      "resolution": "1080x1920",
+      "use_case": "抖音/视频号/小红书竖屏短视频"
+    },
+    "16:9": {
+      "resolution": "1920x1080",
+      "use_case": "B站/YouTube/横屏课程或纪录片感视频"
+    },
+    "1:1": {
+      "resolution": "1080x1080",
+      "use_case": "方形信息流视频"
+    }
+  },
+  "request_contract": {
+    "script_or_prompt": "required",
+    "aspect_ratio": "user may specify 9:16 or 16:9 per request; fall back to SHORT_VIDEO_ASPECT_RATIO",
+    "style": "optional",
+    "duration_seconds": "optional; fall back to SHORT_VIDEO_DURATION_SECONDS",
+    "mode": "optional; fall back to SHORT_VIDEO_MODE"
+  },
+  "pipeline": [
+    "Turn user text into a short-video script and shot list.",
+    "Generate narration audio with the cloned TTS voice.",
+    "Generate or select visual assets for each shot.",
+    "Create video clips with Ark video generation or use digital-human talking-head when requested.",
+    "Generate subtitles from the narration text and align them to the audio.",
+    "Compose clips, narration, subtitles, and optional cover into a vertical MP4.",
+    "Save outputs under SHORT_VIDEO_OUTPUT_DIR."
+  ],
+  "ark_endpoints": {
+    "video_generation_tasks": "/contents/generations/tasks",
+    "video_generation_task": "/contents/generations/tasks/{id}",
+    "image_generations": "/images/generations"
+  },
+  "docs": [
+    "https://www.volcengine.com/docs/82379/1520757",
+    "https://www.volcengine.com/docs/82379/2298881",
+    "https://docs.volcengine.com/docs/82379/1541523",
+    "https://www.volcengine.com/docs/6561/1105162"
+  ]
+}

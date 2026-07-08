@@ -1,0 +1,123 @@
+{
+  "provider": "volcengine-ark",
+  "scope": "ark-model-api-only",
+  "api_key_type": "agent_coding_plan_dedicated_api_key",
+  "api_key_note": "Use the dedicated API Key from the Ark Agent/Coding Plan subscription page with /api/plan/v3 endpoints.",
+  "not_for": [
+    "volcengine-openapi",
+    "tos",
+    "digital-human-cv",
+    "doubao-openspeech"
+  ],
+  "region": "cn-beijing",
+  "env_file": ".env.local",
+  "selected_profile": "agent_plan",
+    "env": {
+        "api_key": "ARK_API_KEY",
+        "model": "ARK_MODEL",
+        "responses_model": "ARK_RESPONSES_MODEL",
+        "embedding_model": "ARK_EMBEDDING_MODEL",
+        "image_model": "ARK_IMAGE_MODEL",
+        "video_model": "ARK_VIDEO_MODEL",
+        "base_url": "ARK_BASE_URL",
+        "timeout_seconds": "ARK_TIMEOUT_SECONDS"
+  },
+  "profiles": {
+    "agent_plan": {
+      "base_url": "https://ark.cn-beijing.volces.com/api/plan/v3",
+      "protocol": "openai-compatible",
+      "note": "Use this for Agent/Coding Plan OpenAI-compatible tools."
+    },
+    "agent_plan_anthropic": {
+      "base_url": "https://ark.cn-beijing.volces.com/api/plan",
+      "protocol": "anthropic-compatible",
+      "note": "Use this only for Anthropic-compatible tools."
+    },
+    "standard_ark": {
+      "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+      "protocol": "openai-compatible",
+      "warning": "Do not use this for Agent Plan quota; the console warns it may incur extra charges."
+    }
+  },
+  "models": {
+    "language": {
+      "routing_model": "ark-code-latest",
+      "model_names": [
+        "doubao-seed-2.0-code",
+        "doubao-seed-2.0-pro",
+        "doubao-seed-2.0-lite",
+        "doubao-seed-2.0-mini",
+        "glm-5.2",
+        "kimi-k2.7-code",
+        "deepseek-v4-pro",
+        "deepseek-v4-flash",
+        "minimax-m3",
+        "minimax-m2.7",
+        "kimi-k2.6"
+      ],
+      "notes": [
+        "Use ark-code-latest for automatic routing when supported.",
+        "Use a model_names entry when a tool does not support automatic routing."
+      ]
+    },
+    "embedding": {
+      "model_names": [
+        "doubao-embedding-vision"
+      ]
+    },
+    "vision": {
+      "model_names": [
+        "doubao-seedance-1.5-pro",
+        "doubao-seedream-5.0-lite"
+      ]
+    }
+  },
+    "endpoints": {
+        "responses": "/responses",
+        "chat_completions": "/chat/completions",
+        "embeddings": "/embeddings",
+        "files": "/files",
+        "file": "/files/{file_id}",
+        "file_content": "/files/{file_id}/content",
+        "images_generations": "/images/generations",
+        "video_generation_tasks": "/contents/generations/tasks",
+        "video_generation_task": "/contents/generations/tasks/{id}",
+        "video_generation_tasks_list": "/contents/generations/tasks?page_num={page_num}&page_size={page_size}&filter.status={filter.status}&filter.task_ids={filter.task_ids}&filter.model={filter.model}"
+  },
+  "interface_catalog": {
+        "language": {
+            "model": "ark-code-latest",
+            "openai_base_url": "https://ark.cn-beijing.volces.com/api/plan/v3",
+            "openai_responses": "https://ark.cn-beijing.volces.com/api/plan/v3/responses",
+            "openai_chat_completions": "https://ark.cn-beijing.volces.com/api/plan/v3/chat/completions",
+            "anthropic_base_url": "https://ark.cn-beijing.volces.com/api/plan"
+        },
+        "embedding": {
+            "model": "doubao-embedding-vision",
+            "base_url": "https://ark.cn-beijing.volces.com/api/plan/v3",
+            "embeddings": "https://ark.cn-beijing.volces.com/api/plan/v3/embeddings",
+            "note": "Agent Plan vector model does not support Auto routing."
+        },
+        "files": {
+            "create_or_list": "https://ark.cn-beijing.volces.com/api/plan/v3/files",
+            "get_or_delete": "https://ark.cn-beijing.volces.com/api/plan/v3/files/{file_id}",
+            "content": "https://ark.cn-beijing.volces.com/api/plan/v3/files/{file_id}/content"
+        },
+        "vision": {
+      "video_models": [
+        "doubao-seedance-1.5-pro",
+        "doubao-seedream-5.0-lite"
+      ],
+      "create_video_task": "https://ark.cn-beijing.volces.com/api/plan/v3/contents/generations/tasks",
+      "query_video_task": "https://ark.cn-beijing.volces.com/api/plan/v3/contents/generations/tasks/{id}",
+      "list_video_tasks": "https://ark.cn-beijing.volces.com/api/plan/v3/contents/generations/tasks?page_num={page_num}&page_size={page_size}&filter.status={filter.status}&filter.task_ids={filter.task_ids}&filter.model={filter.model}",
+      "cancel_or_delete_video_task": "https://ark.cn-beijing.volces.com/api/plan/v3/contents/generations/tasks/{id}",
+      "image_generation": "https://ark.cn-beijing.volces.com/api/plan/v3/images/generations"
+    },
+    "billing_warning": "For Agent/Coding Plan, use /api/plan/v3 endpoints from the subscription page. Avoid standard /api/v3 endpoints unless intentionally using normal Ark billing."
+  },
+  "docs": [
+    "https://www.volcengine.com/docs/82379/1330626",
+    "https://console.volcengine.com/ark/region:cn-beijing/subscription/agent-plan"
+  ]
+}

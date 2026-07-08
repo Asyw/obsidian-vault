@@ -1,0 +1,56 @@
+{
+  "provider": "bytedance-openspeech",
+  "product": "doubao-voice-clone-tts",
+  "env_file": ".env.local",
+  "scope": "doubao-speech-api-only",
+  "not_for": [
+    "volcengine-ark-model-api",
+    "volcengine-openapi",
+    "tos",
+    "digital-human-cv"
+  ],
+  "api_boundary": {
+    "summary": "Doubao openspeech is separate from Volcengine Ark model APIs and Volcengine OpenAPI SigV4 APIs.",
+    "auth": "Use the speech-model API Key from the speech console, or fall back to speech App ID + Access Token. Agent Plan Ark API Key is only for Agent Plan speech endpoints when explicitly supported.",
+    "base_domain": "openspeech.bytedance.com"
+  },
+  "env": {
+    "ark_api_key": "ARK_API_KEY",
+    "speech_api_key": "DOUBAO_SPEECH_API_KEY",
+    "app_id": "DOUBAO_SPEECH_APP_ID",
+    "access_token": "DOUBAO_SPEECH_ACCESS_TOKEN",
+    "secret_key": "DOUBAO_SPEECH_SECRET_KEY",
+    "endpoint": "DOUBAO_TTS_ENDPOINT",
+    "resource_id": "DOUBAO_TTS_RESOURCE_ID",
+    "uid": "DOUBAO_TTS_UID",
+    "voice_id": "ARK_TTS_VOICE_ID",
+    "audio_format": "ARK_TTS_AUDIO_FORMAT",
+    "sample_rate": "ARK_TTS_SAMPLE_RATE",
+    "speed_ratio": "ARK_TTS_SPEED_RATIO",
+    "volume_ratio": "ARK_TTS_VOLUME_RATIO",
+    "pitch_ratio": "ARK_TTS_PITCH_RATIO"
+  },
+  "tts": {
+    "voice_clone_resource_id": "seed-icl-2.0",
+    "tts_model_resource_id": "seed-tts-2.0",
+    "default_endpoint": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+    "agent_plan_endpoint": "https://openspeech.bytedance.com/api/v3/plan/tts/unidirectional",
+    "default_resource_id_header": "seed-icl-2.0",
+    "default_audio_format": "mp3",
+    "default_sample_rate": 24000,
+    "default_speed_ratio": 1.0,
+    "default_volume_ratio": 1.0,
+    "default_pitch_ratio": 1.0
+  },
+  "asr": {
+    "resource_ids": [
+      "volc.seedasr.sauc.duration"
+    ]
+  },
+  "urls": {
+    "tts_bidirectional_websocket": "wss://openspeech.bytedance.com/api/v3/plan/tts/bidirection",
+    "tts_unidirectional_stream_websocket": "wss://openspeech.bytedance.com/api/v3/plan/tts/unidirectional/stream",
+    "tts_unidirectional_http": "https://openspeech.bytedance.com/api/v3/tts/unidirectional",
+    "tts_unidirectional_agent_plan_http": "https://openspeech.bytedance.com/api/v3/plan/tts/unidirectional"
+  }
+}

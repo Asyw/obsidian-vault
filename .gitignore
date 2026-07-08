@@ -5,3 +5,5 @@
 .integrations/
 .DS_Store
 .trash/
+.obsidian/workspace.json
+**/outputs/videos/
